@@ -1,0 +1,70 @@
+#anim-bg {
+  position: fixed;
+  top: 22%;
+  z-index: -1;
+}
+
+#home {
+  clip-path: url(#cache);
+}
+
+#grey {
+  fill: none;
+  opacity: 0.15;
+  stroke: rgba(131, 21, 249, 0.784);
+  stroke-width: 12;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 1300;
+  animation: draw 6s;
+  stroke-linecap: round;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#blue {
+  fill: none;
+  opacity: 0.1;
+  stroke: #ffffff;
+  stroke-width: 12;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  animation: show 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+#light-green {
+  fill: none;
+  opacity: 0.20;
+  stroke: #06c45c;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 800;
+  stroke-linecap: round;
+  animation: draw 8s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
