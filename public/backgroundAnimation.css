@@ -1,5 +1,6 @@
 #anim-bg {
   position: fixed;
+  display: block;
   top: 22%;
   z-index: -1;
 }
@@ -38,7 +39,7 @@
 
 #light-green {
   fill: none;
-  opacity: 0.20;
+  opacity: 0.2;
   stroke: #06c45c;
   stroke-width: 6;
   stroke-miterlimit: 10;

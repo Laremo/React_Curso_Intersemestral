@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Button, Typography, TextField } from '@mui/material';
-
-export default function FormComp() {
+//Deconstruction, se reccibe el parámetro como objeto
+//extraemos las props individualmente
+export default function FormComp({ users = [], setUsers = () => {} }) {
   const styles = {
     container: {
       width: 500,
@@ -16,6 +17,14 @@ export default function FormComp() {
   };
   const sendValue = () => {
     setInputUser(correoRef.current.value);
+    console.log(users);
+    //hacemos magia
+    if (users.some((us) => us === correoRef.current.value))
+      return alert(correoRef.current.value + ' already exists');
+
+    const result = [...users, correoRef.current.value]; //usando spread operator
+    setUsers(result);
+    return alert(`Saved use ${correoRef.current.value}`);
   };
 
   const [inputUser, setInputUser] = useState('');
