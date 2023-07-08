@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { articleContent } from './components/articleContent';
 import './article.css';
 import FormComp from './components/formcomp';
@@ -47,7 +47,6 @@ export default function Article() {
               );
             case 'character':
               characters.push(item);
-              console.log(characters);
               return null;
             default:
               return null;

@@ -5,7 +5,7 @@ export default function CharacterComponent({ character }) {
     <div className="char-container">
       <div className="infoContainer">
         <h2 className="char-name">{character.name}</h2>
-        <p className="char-description">{character.content}</p>
+        <div className="char-description">{character.content}</div>
       </div>
       <div className="imageContainer">
         <img
