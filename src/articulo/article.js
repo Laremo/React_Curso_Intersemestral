@@ -24,7 +24,7 @@ export default function Article() {
   return (
     <div className="container">
       <div className="headerContainer">
-        <h1 className="text">Mostrando un Articulo</h1>
+        <h1 className="text">Neuromancer</h1>
       </div>
       <div className=" bodyContainer">
         {articleContent.map((item) => {
@@ -53,11 +53,11 @@ export default function Article() {
           }
         })}
         <div className="char-slider">
-          <button className="slide-btn" onClick={handleForward}>
+          <button className="slide-btn" onClick={handleBackwards}>
             {`<`}
           </button>
           {<CharacterComponent character={characters[currentCharacter]} />}
-          <button className="slide-btn" onClick={handleBackwards}>
+          <button className="slide-btn" onClick={handleForward}>
             {`>`}
           </button>
         </div>
