@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { articleContent } from './components/articleContent';
 import './article.css';
 import FormComp from './components/formcomp';
 import { Typography } from '@mui/material';
-
-const userArray = [];
-
-let x = 0;
-
-const updateUserList = (user) => {
-  userArray.push(user);
-};
+import CharacterComponent from './components/characterComponent';
 
 export default function Article() {
   const [users, setUsers] = useState(['user 1', 'user2']);
+  const [currentCharacter, setCurrentChar] = useState(0);
+  const characters = [];
+
+  const handleForward = () => {
+    if (currentCharacter < characters.length - 1)
+      setCurrentChar(currentCharacter + 1);
+    else setCurrentChar(0);
+  };
+
+  const handleBackwards = () => {
+    if (currentCharacter === 0) setCurrentChar(characters.length - 1);
+    else setCurrentChar(currentCharacter - 1);
+  };
 
   return (
     <div className="container">
@@ -40,19 +46,24 @@ export default function Article() {
                 />
               );
             case 'character':
-              return <p>Aqui debe ir un personaje</p>;
+              characters.push(item);
+              console.log(characters);
+              return null;
             default:
               return null;
           }
         })}
+        <div className="char-slider">
+          <button className="slide-btn" onClick={handleForward}>
+            {`<`}
+          </button>
+          {<CharacterComponent character={characters[currentCharacter]} />}
+          <button className="slide-btn" onClick={handleBackwards}>
+            {`>`}
+          </button>
+        </div>
       </div>
       <div className="formContainer">
-        {/* {console.log('render')}
-        {setInterval(() => {
-          console.log(`i = ${x}`, users);
-          x++;
-          if (x >= 100) clearInterval();
-        }, 1000)} */}
         <FormComp users={users} setUsers={setUsers} />
       </div>
     </div>

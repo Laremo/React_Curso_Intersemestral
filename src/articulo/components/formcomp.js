@@ -19,12 +19,12 @@ export default function FormComp({ users = [], setUsers = () => {} }) {
     setInputUser(correoRef.current.value);
     console.log(users);
     //hacemos magia
-    if (users.some((us) => us === correoRef.current.value))
-      return alert(correoRef.current.value + ' already exists');
+    // if (users.some((us) => us === correoRef.current.value))
+    //   return alert(correoRef.current.value + ' already exists');
 
     const result = [...users, correoRef.current.value]; //usando spread operator
     setUsers(result);
-    return alert(`Saved use ${correoRef.current.value}`);
+    // return alert(`Saved use ${correoRef.current.value}`);
   };
 
   const [inputUser, setInputUser] = useState('');
