@@ -51,6 +51,10 @@ export const articleContent = [
     content: chiba,
   },
   {
+    type: 'title',
+    content: 'Personajes',
+  },
+  {
     type: 'character',
     name: 'Case',
     content: `Henry Dorsett Case. Antihéroe de la novela, adicto a las drogas y hacker del ciberespacio. Intentó estafar a su patrón y por ello, este destruyó mediante una micotoxina rusa químicamente su capacidad para conectarse a la red. Es encontrado en Asia por Molly y Armitage y reclutado a cambio de la reconstrucción de la sección dañada de su sistema nervioso. Case es el tipo que lleva las de perder y mira solo por sí mismo. A lo largo del camino se hará con un hígado y un páncreas modificados que le impiden colocarse; conoce a la Navaja Andante, vestida de cuero, Molly; se rodea de rastafaris espaciales drogados; libera a una inteligencia artificial (Wintermute) y cambia el paisaje de la matriz.`,
